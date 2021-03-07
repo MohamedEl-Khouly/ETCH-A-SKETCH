@@ -1,0 +1,43 @@
+/* ---- General Rules ---- */
+* {
+	box-sizing: border-box;
+	color: #12343b;
+}
+
+body {
+	font-family: 'Comfortaa', cursive;
+	margin: 0;
+	padding: 0;
+	background: #16222a; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#3a6073,
+		#16222a
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#3a6073,
+		#16222a
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*-----Header Rules-------*/
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#intro {
+	text-align: center;
+}
+/*-----Play Ground Rules-------*/
+
+#play-ground {
+	width: 660px;
+	height: 660px;
+	background-color: #fff;
+	margin: auto auto;
+	border: #16222a solid 10px;
+}
+/*-----Footer Rules-------*/
+footer button {
+}
