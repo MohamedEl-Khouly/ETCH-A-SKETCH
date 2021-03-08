@@ -21,23 +21,23 @@ body {
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /*-----Header Rules-------*/
-h1 {
-	text-align: center;
-	text-transform: uppercase;
-}
 
-#intro {
+#main-header {
 	text-align: center;
 }
 /*-----Play Ground Rules-------*/
 
-#play-ground {
-	width: 660px;
-	height: 660px;
-	background-color: #fff;
+.play-ground {
+	height: 600px;
+	width: 600px;
 	margin: auto auto;
-	border: #16222a solid 10px;
+	background-color: #fff;
+	border: #16222a 10px solid;
+	display: grid;
+}
+
+.play-ground div {
+	background-color: #fff;
+	border: #16222a 1px solid;
 }
 /*-----Footer Rules-------*/
-footer button {
-}
