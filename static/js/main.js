@@ -18,7 +18,8 @@
 
 const playGround = document.querySelector('.play-ground');
 
-let numberOfPixels = 16;
+let numberOfPixels = 16,
+	pixels = document.querySelectorAll('.play-ground div');
 
 /**
  * End Global Variables
@@ -55,5 +56,13 @@ function gridBuilder() {
  *
 */
 
-
+// Initial grid builder
 gridBuilder()
+
+// Hover event Handler
+pixels = document.querySelectorAll('.play-ground div');
+pixels.forEach(pixel => {
+	pixel.addEventListener("mouseover", e => {
+		e.target.style.backgroundColor = 'green';
+	});
+});
