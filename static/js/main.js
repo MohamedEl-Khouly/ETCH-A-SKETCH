@@ -16,10 +16,12 @@
  *
 */
 
-const playGround = document.querySelector('.play-ground');
+const playGround = document.querySelector('.play-ground'),
+	colorIn = document.querySelector('#pixel-color');
 
 let numberOfPixels = 16,
-	pixels = document.querySelectorAll('.play-ground div');
+	pixels = document.querySelectorAll('.play-ground div'),
+	color = '#000';
 
 /**
  * End Global Variables
@@ -63,6 +65,11 @@ gridBuilder()
 pixels = document.querySelectorAll('.play-ground div');
 pixels.forEach(pixel => {
 	pixel.addEventListener("mouseover", e => {
-		e.target.style.backgroundColor = 'green';
+		e.target.style.backgroundColor = color;
 	});
+});
+
+// Color handle event
+colorIn.addEventListener('change', e => {
+	color = e.target.value;
 });
