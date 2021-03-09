@@ -17,7 +17,9 @@
 */
 
 const playGround = document.querySelector('.play-ground'),
-	colorIn = document.querySelector('#pixel-color');
+	colorIn = document.querySelector('#pixel-color'),
+	resetBtn = document.querySelector('#reset-btn'),
+	sizeBtn = document.querySelector('#size-btn');
 
 let numberOfPixels = 16,
 	pixels = document.querySelectorAll('.play-ground div'),
@@ -51,7 +53,14 @@ function gridBuilder() {
 		playGround.appendChild(div);
 	}
 	playGround.setAttribute('style', `grid-template-columns: repeat(${numberOfPixels},1fr);`)
+	pixels = document.querySelectorAll('.play-ground div');
+	pixels.forEach(pixel => {
+		pixel.addEventListener("mouseover", e => {
+			e.target.style.backgroundColor = color;
+		});
+	});
 }
+
 /**
  * End Main Functions
  * Begin Events
@@ -61,15 +70,19 @@ function gridBuilder() {
 // Initial grid builder
 gridBuilder()
 
-// Hover event Handler
-pixels = document.querySelectorAll('.play-ground div');
-pixels.forEach(pixel => {
-	pixel.addEventListener("mouseover", e => {
-		e.target.style.backgroundColor = color;
-	});
-});
-
 // Color handle event
 colorIn.addEventListener('change', e => {
 	color = e.target.value;
+});
+
+// Reset event handler
+resetBtn.addEventListener('click', e => {
+	gridBuilder();
+});
+
+// Size btn
+sizeBtn.addEventListener('click', e => {
+	let newSize = Number(prompt("enter new grid size?\n max 100", "ex:64"));
+	numberOfPixels = newSize > 100 ? 100 : newSize;
+	gridBuilder();
 });
